@@ -13,19 +13,19 @@ vetorMultiplicacao = numpy.random.rand(x, )
 
 def runThreading():
     vetor = []
-    t1 = time.clock()
+    t1 = time.time()
     with concurrent.futures.ThreadPoolExecutor(max_workers=numeroWorkers) as executor:
         for linha in matrizCompartilhada:
             vetor.append(executor.submit(multLinhaPorCol, linha, vetorMultiplicacao))
-    t2 = time.clock() - t1
+    t2 = time.time() - t1
 
     print("runtime(ms) paralelo com threads:", t2)
 
     if verifica:
         try:
-            t1 = time.clock()
+            t1 = time.time()
             verificaResultado(matrizCompartilhada, vetorMultiplicacao, vetor)
-            t2 = time.clock() - t1
+            t2 = time.time() - t1
             print("runtime(ms) sequencial:",t2)
         except AssertionError:
             print("errou")
