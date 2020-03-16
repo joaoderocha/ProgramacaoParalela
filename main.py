@@ -26,7 +26,7 @@ def runThreading():
             t1 = time.time()
             verificaResultado(matrizCompartilhada, vetorMultiplicacao, vetor)
             t2 = time.time() - t1
-            print("runtime(ms) sequencial:",t2)
+            print("runtime(ms) sequencial:", t2)
         except AssertionError:
             print("errou")
 
@@ -34,4 +34,3 @@ def runThreading():
 if __name__ == '__main__':
     print("Execucao com threads")
     runThreading()
-
