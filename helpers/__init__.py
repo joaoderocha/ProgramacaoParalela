@@ -1,2 +1,2 @@
-from .testes import verificaResultado
+from .testes import verificaResultado, guardaResultado, geraTabela
 from .tasks import multLinhaPorCol
